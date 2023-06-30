@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        *
+        {margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-seriff;
+        }
+        body{
+            background: #161623;
+        }
+        .body{
+        display: flex;
+        font-family: Arial, sans-serif;
+        }
+        
+        .container{
+            background-color: aqua;
+            height: 100px;
+            width: 100vw;
+        }
+
+        li{
+        display:inline-block;
+        line-height: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin:2px;
+        text-align: center;
+        font-size: large;
+
+        }
+    
+        li:hover{
+            background-color: aquamarine;
+        }
+
+        .container1{
+        color: #fff;
+        margin-top: 20px;
+        margin-left: 10px;
+        position: relative;
+        display: flex;
+        justify-content: left;
+        align-items: left;
+        width:100%;
+        flex-wrap: wrap;
+        z-index: 1;
+        }
+
+        textarea{
+            background: #ffffe0;
+            margin-top: 10px;
+            border-radius: 10px;
+            display: flex;
+        }
+
+        .submit{
+            border-radius: 50px;
+            margin-top: 20px;
+            height: 100px;
+            width: 200px;
+            color: rgb(82, 245, 82);
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="/answer">
+    <div class="container">
+        <h1 style="text-align: center;">QuestionHub</h1>
+                <ul>
+                    <li ><a href="/Home"><b>Home</b></a></li>
+                    <li ><a href="Profile.html"><b>Profile</b></a></li>
+                    <li ><a href="MyQuestions.html"><b>My Questions</b></a></li>
+                    <li ><a href="Questions.html"><b>Ask a question</b></a></li>
+                </ul>
+    </div>
+    <div class="container1">
+            {% for i in value %}
+            <h2>Question ID: {{ i[0] }} ::&nbsp;</h2>
+            <h2>{{ i[1] }}</h2>
+            <textarea style="height:100px; width:98%" id="answer" name="answer" placeholder="Enter your answer here"></textarea><br><br>
+            <input type="hidden" id="id" name="id" value="{{ i[0] }}">
+            {% endfor %}
+            <div class="submit">
+            <input type="submit" name="submit" placeholder="SUBMIT">
+            </div>
+    </div>
+    </form>
+    
+</body>
+</html>
