@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign In</title>
+  <style>
+    body {
+      padding-top: 5%;
+      font-family:Georgia, 'Times New Roman', Times, serif;
+      background-color: #f4f4f4;
+      background-image: url('/static/login.webp');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    
+    .container {
+      max-width: 400px;
+      opacity: 0.3;
+      margin: 0 auto;
+      background-color:#10082d;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      text-align: center;
+      color: #fff;
+    }
+
+    h1{
+      text-align: center;
+      color: #70a773;
+    }
+
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+    
+    .form-group button {
+      width: 100%;
+      padding: 8px;
+      border-radius: 3px;
+      border: none;
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .form-group button:hover{
+      transform: scale(0.9);
+    }
+  </style>
+</head>
+<body>
+  <h1><b>QuestionHub</b></h1>
+  <div class="container">
+    <h2>Sign in</h2>
+    <form method="POST" action="/" encrypt="multipart/forward-data">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="Password">Password:</label>
+        <input type="Password" id="Password" name="Password" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" value="login">Sign In</button>
+      </div>
+      <div>
+        <p style="color:#fff">Not able to login, <a style="color:rgb(245, 241, 241); opacity: 1;" href="Newacc.html">Click here</a></p>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
